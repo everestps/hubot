@@ -59,7 +59,7 @@ class Factoids
     @cache[key]
 
   list: ->
-    return @cache
+    Object.keys(@cache)
 
   tell: (person, key) ->
     factoid = this.get key
@@ -97,6 +97,7 @@ module.exports = (robot) ->
 
   robot.respond /factoids? list/i, (msg) ->
     msg.send factoids.list()
+    console.log @cache
 
   robot.respond /factoids? delete "(.*)"$/i, (msg) ->
     msg.reply factoids.delFactoid msg.match[1]
