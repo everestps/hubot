@@ -1,1 +1,1 @@
-web: bin/hubot -a irc -n hubotcs
+web: bin/hubot --adapter hipchat
